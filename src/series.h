@@ -14,6 +14,9 @@
 # include "client.h"
 
 # define INFLUXDB_SERIES_STEP 64
+# define COLUMN_TYPE_INT 	1
+# define COLUMN_TYPE_DOUBLE	2
+# define COLUMN_TYPE_STRING	3
 
 typedef void (*influxdb_series_free_callback)(char **row);
 
@@ -21,6 +24,7 @@ typedef struct influxdb_series {
     char   *name;
     char   **columns;
     char   ***points;
+    unsigned int *column_types;
     size_t columns_length;
     size_t points_length;
     influxdb_series_free_callback free_cb;
@@ -52,12 +56,13 @@ char influxdb_series_set_name(s_influxdb_series *series, char *name);
  */
 char **influxdb_series_set_columns(s_influxdb_series *series,
                                    char **columns,
+                                   unsigned int *column_types,
                                    size_t length);
 
 /**
  * Add a new column
  */
-char influxdb_series_add_colums(s_influxdb_series *series, char *name);
+char influxdb_series_add_colums(s_influxdb_series *series, char *name, unsigned int type);
 
 /**
  * Define the points matrix
