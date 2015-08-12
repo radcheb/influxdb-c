@@ -9,7 +9,7 @@
 
 #include "series.h"
 #include "utils.h"
-
+#include<stdio.h>
 char
 *influxdb_series_get_name(s_influxdb_series *series)
 {
@@ -54,11 +54,13 @@ char
 influxdb_series_add_colums(s_influxdb_series *series, char *name, unsigned int type)
 {
     if (series->columns_length == 0) {
-        series->columns = malloc(sizeof (char *) * INFLUXDB_SERIES_STEP);
+        series->columns = malloc(sizeof (char *) * sizeof(name));
         series->column_types = malloc(sizeof (unsigned int));
-    } else if (series->columns_length % INFLUXDB_SERIES_STEP == 0) {
+    } else
+//    	if (series->columns_length % INFLUXDB_SERIES_STEP == 0)
+    	{
         series->columns = realloc(series->columns,
-            sizeof (char *) * (series->columns_length + INFLUXDB_SERIES_STEP));
+            sizeof (char *) * (series->columns_length + sizeof(name)));
         series->column_types = realloc(series->column_types,
         		sizeof (unsigned int) * (series->columns_length + 1));
     }
@@ -145,8 +147,9 @@ influxdb_series_free(s_influxdb_series *series,
         free(series->points);
         series->points_length = 0;
 
-        for (i = 0; i < series->columns_length; i++)
-            free(series->columns[i]);
+        for (i = 0; i < series->columns_length; i++){
+        	free(series->columns[i]);
+        }
         free(series->columns);
         free(series->column_types);
         series->columns_length = 0;
