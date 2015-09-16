@@ -1,5 +1,5 @@
 influxdb-c
-    ==========
+==========
 
 [![Build Status](https://travis-ci.org/radcheb/influxdb-c.svg)](https://travis-ci.org/radcheb/influxdb-c)
 
