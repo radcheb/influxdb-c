@@ -28,7 +28,7 @@
     "src/Makefile.am",
     "Makefile.am",
     "bootstrap",
-    " configure.ac"
+    "configure.ac"
   ],
     "install": [
     	"./bootstrap",
