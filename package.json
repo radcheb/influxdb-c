@@ -24,7 +24,11 @@
     "src/series.h",
     "src/server.h",
     "src/shard.h",
-    "src/utils.h"
+    "src/utils.h",
+    "src/Makefile.am",
+    "Makefile.am",
+    "bootstrap",
+    " configure.ac"
   ],
     "install": [
     	"./bootstrap",
