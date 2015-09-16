@@ -5,30 +5,5 @@
   "description": "A C driver for influxDB, until version 0.8",
   "keywords": ["influxdb", "driver", "metric"],
   "license": "MIT",
-  "src": [
-  	"src/client.c",
-  	"src/cluster_admin.c",
-  	"src/database.c",
-  	"src/database_user.c",
-  	"src/query.c",
-  	"src/series.c",
-  	"src/server.c",
-  	"src/shard.c",
-  	"src/utils.c",
-  	"src/client.h",
-  	"src/cluster_admin.h",
-  	"src/database.h",
-    "src/database_user.h",
-    "src/influxdb.h",
-    "src/query.h",
-    "src/series.h",
-    "src/server.h",
-    "src/shard.h",
-    "src/utils.h",
-    "src/Makefile.am",
-    "Makefile.am",
-    "bootstrap",
-    "configure.ac"
-  ],
-    "install": "./bootstrap && ./configure && make && make install"
+  "install": "./bootstrap && ./configure && make && sudo make install"
 }
