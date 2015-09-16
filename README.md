@@ -1,5 +1,7 @@
 influxdb-c
-==========
+    ==========
+
+[![Build Status](https://travis-ci.org/radcheb/influxdb-c.svg)](https://travis-ci.org/radcheb/influxdb-c)
 
 # This library is not updated for InfluxDB 0.9.0. There are breaking changes to the API, use at your own risk.
 
