@@ -59,7 +59,6 @@ AC_FUNC_MALLOC
 AC_FUNC_REALLOC
 AC_CHECK_FUNCS([calloc strchr strcpy strncat sprintf])
 
-AM_PROG_AR
 LT_INIT
 
 AC_OUTPUT( Makefile src/Makefile tests/Makefile )
