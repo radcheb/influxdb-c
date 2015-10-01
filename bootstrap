@@ -1,11 +1,9 @@
-#!/bin/sh
+#!/bin/sh -xe
 
 cd `dirname $0`
 
 mkdir -p m4/
 
-cd src
 autoheader
-cd ..
 
 autoreconf -fvi
